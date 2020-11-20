@@ -9,7 +9,7 @@
 - checkLength(): 입력값의 최소/최대 길이를 확인
 - checkEmail(): email의 형식을 지켰는지 확인
 - checkPasswordsMatch(): 비밀번호의 입력값이 일치하는지 확인
-- showError(), showSuccess(): 여러 항목 확인 후, 성공/실패여부 시각
+- showError(), showSuccess(): 여러 항목 확인 후, 성공/실패여부 시각화
 
 ## 아쉬운 점
 
