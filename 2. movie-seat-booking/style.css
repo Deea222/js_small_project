@@ -31,7 +31,7 @@ body {
   appearance: none;
 }
 
-.container {
+.seat-container {
   perspective: 300px;
   margin-bottom: 30px;
 }
@@ -79,13 +79,14 @@ body {
 .seat:not(.occupied) {
   transition: transform 0.2s;
 }
-.showcase .seat:not(.occupied):hover {
-  cursor: default;
-  transform: scale(1);
-}
+
 .row .seat:not(.occupied):hover {
   cursor: pointer;
   transform: scale(1.4);
+}
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
 }
 
 .row {
@@ -97,8 +98,8 @@ body {
   height: 50px;
   width: 100%;
   margin: 15px 0;
-  transform: rotateX(-45deg);
-  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  transform: rotateX(-40deg);
+  box-shadow: 2px 3px 20px rgba(255, 255, 255, 0.7);
 }
 
 p.text {
