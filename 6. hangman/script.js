@@ -1,30 +1,34 @@
 const wordEl = document.getElementById('word');
 const wrongLettersEl = document.getElementById('wrong-letters');
-const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
-const notification = document.getElementById('notification-container');
+
 const finalMessage = document.getElementById('final-message');
+const notification = document.getElementById('notification-container');
+const playAgainBtn = document.getElementById('play-button');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
-const words = ['programming', 'star', 'donghyuk', 'hello'];
+const words = ['computer', 'star', 'coffee', 'hello'];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
-const correctLetters = ['a','p'];
-const wrongLetters = [];
+let correctLetters = [];
+let wrongLetters = [];
+
+displayWord();
+
 
 // ! Show hidden word
 function displayWord() {
-	wordEl.innerHTML = `${selectedWord
-						.split('')
-						.map(letter => 
-						`<span class="letter">
-							${correctLetters.includes(letter) ? letter : ""}
-						</span>`)
-						.join('')}`
+	const abc = `${selectedWord.split('')
+				.map(letter =>
+					`<span class="letter">
+						${correctLetters.includes(letter) ? letter : ""}
+					</span>`)
+				.join('')}`;
 
-	const innerWord = wordEl.innerText.replace(/\n/g, '');
+	wordEl.innerHTML = abc;
+	const innerWord = wordEl.innerText.replace(/\s/g, '');
 	if (innerWord === selectedWord) {
 		finalMessage.innerText = 'Congratulations! You won!';
 		popup.style.display = 'flex'
@@ -34,12 +38,11 @@ function displayWord() {
 // ! Update the wrong letters
 function updateWrongLettersEl() {
 	wrongLettersEl.innerHTML = `
-		${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+		${wrongLetters.length > 0 ? '<p>Wrong Letters</p>' : ''}
 		${wrongLetters.map(letter => `<span> ${letter}</span>`)}`;
 
 	figureParts.forEach((part, index) => {
-		const errors = wrongLetters.length;
-		if (index < errors) {
+		if (index < wrongLetters.length) {
 			part.style.display = 'block';
 		} else {
 			part.style.display = 'none';
@@ -67,7 +70,7 @@ function showNotification() {
 window.addEventListener('keydown', e => {
 	if(e.keyCode >=65 && e.keyCode <= 90) {
 		const letter = e.key;
-		
+
 		if (selectedWord.includes(letter)) {
 			if (!correctLetters.includes(letter)) {
 				correctLetters.push(letter);
@@ -88,16 +91,14 @@ window.addEventListener('keydown', e => {
 
 // ! Restart gane
 playAgainBtn.addEventListener('click', () => {
-	correctLetters.splice(0);
-	wrongLetters.splice(0);
+	correctLetters = [];
+	wrongLetters = [];
 
 	selectedWord = words[Math.floor(Math.random() * words.length)];
+	popup.style.display = 'none';
 
 	displayWord();
 
 	updateWrongLettersEl();
-	popup.style.display = 'none';
 })
 
-
-displayWord();

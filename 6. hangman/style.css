@@ -3,42 +3,44 @@
 }
 
 body {
-  background-color: #34495e;
-  color: #fff;
+  background-color: #d9b6a3;
+  color: #400101;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 80vh;
   margin: 0;
   overflow: hidden;
 }
 
 h1 {
-  margin: 20px 0 0;
+  margin: 30px 0 0;
 }
 
 .game-container {
   padding: 20px 30px;
   position: relative;
-  margin: auto;
   height: 350px;
   width: 450px;
 }
 
 .figure-container {
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 4px;
+  fill: #bf6341;
+  stroke: #400101;
+  stroke-width: 2.5px;
   stroke-linecap: round;
 }
 
+/* ! */
 .figure-part {
   display: none;
 }
 
 .wrong-letters-container {
   position: absolute;
+  color: #a61103;
   top: 20px;
   right: 20px;
   display: flex;
@@ -58,10 +60,11 @@ h1 {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  color: #a68263;
 }
 
 .letter {
-  border-bottom: 3px solid #2980b9;
+  border-bottom: 3px solid #400101;
   display: inline-flex;
   font-size: 30px;
   align-items: center;
@@ -85,7 +88,8 @@ h1 {
 }
 
 .popup {
-  background: #2980b9;
+  background: #a61103;
+  color: #d9b6a3;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -93,8 +97,9 @@ h1 {
 }
 .popup button {
   cursor: pointer;
-  background-color: #fff;
-  color: #2980b9;
+  background-color: #d9b6a3;
+  color: #400101;
+  border-radius: 5px;
   border: none;
   margin-top: 20px;
   padding: 12px 20px;
@@ -108,7 +113,8 @@ h1 {
 }
 
 .notification-container {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #a61103;
+  color: #d9b6a3;
   border-radius: 10px 10px 0 0;
   padding: 15px 20px;
   position: absolute;
