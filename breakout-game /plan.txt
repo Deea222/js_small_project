@@ -1,0 +1,12 @@
+1. Create canvas context x
+2. Create and draw ball x
+3. Create and draw paddle x
+4. Create bricks -> 객체가 bricksInfo를 갖지않고, x와 y값만 가진다면 무슨 문제가 발생하는가?
+5. Draw score 
+6. Add update() - Animate - requestAnimationFrame(cb) 
+7. Move paddle 
+8. Keyboard event handlers to move paddle 
+9. Move ball 
+10. Add wall bounderies 
+11. Increase score when bricks break
+12. Lose - redraw bricks, reset score
